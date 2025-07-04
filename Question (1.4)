@@ -1,0 +1,36 @@
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayPersonInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Employee extends Person {
+    String employeeID;
+    double salary;
+
+    Employee(String name, int age, String employeeID, double salary) {
+        super(name, age);  // Calls Person's constructor
+        this.employeeID = employeeID;
+        this.salary = salary;
+    }
+
+    void displayEmployeeInfo() {
+        super.displayPersonInfo(); // Optional: Displays name and age
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Salary: ₹" + salary);
+    }
+
+    public static void main(String[] args) {
+        Employee emp = new Employee("Prasanna", 23, "EMP1234", 55000);
+        emp.displayEmployeeInfo();
+    }
+}
